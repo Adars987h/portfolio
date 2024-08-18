@@ -88,6 +88,11 @@ body.dark-theme {
   filter: invert(26%) sepia(71%) saturate(4171%) hue-rotate(224deg) brightness(92%) contrast(90%);
 }
 
+.filter-white {
+  filter: invert(100%) brightness(100%);
+}
+
+
 
 /*================= Button Dark/Light ===============*/
 .nav__btns {
@@ -729,6 +734,10 @@ img {
   border-radius: 0.5rem;
   justify-self: center;
 }
+
+.portfolio img{
+  border: 2px solid #343adf;
+}
 .portfolio__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
@@ -833,6 +842,12 @@ img {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
 }
+
+
+.footer__title span{
+  color: pink
+}
+
 
 .footer__subtitle {
   font-size: var(--small-font-size);
