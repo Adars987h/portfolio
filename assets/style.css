@@ -730,7 +730,7 @@ img {
   padding: 0 1.5rem;
 }
 .portfolio__img {
-  width: 310px;
+  width: 35vw;
   border-radius: 0.5rem;
   justify-self: center;
 }
@@ -993,6 +993,8 @@ img {
     grid-template-columns: max-content 1fr 1fr;
   }
 
+
+
   .home__data {
     grid-column: initial;
   }
@@ -1198,5 +1200,12 @@ img {
 
   .button--white {
     bottom: -4.5rem;
+  }
+}
+
+
+@media (max-width:600px){
+  .portfolio__img{
+    width:80vw;
   }
 }
