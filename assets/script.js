@@ -1,113 +1,172 @@
 /* ==========================================================================
    Adarsh Kumar Srivastava — portfolio behaviour
+   (initial theme is applied by the inline script in <head> to avoid a flash)
    ========================================================================== */
 (function () {
   "use strict";
 
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const hasIO = "IntersectionObserver" in window;
 
   /* ---------- theme ---------- */
-  const root = document.documentElement;
   const themeToggle = $("#theme-toggle");
-  const STORAGE_KEY = "theme";
+  const themeMeta = $('meta[name="theme-color"]');
 
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") {
-    root.dataset.theme = stored;
-  } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-    root.dataset.theme = "light";
-  }
-
-  const syncThemeColor = () => {
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
-      meta.setAttribute("content", root.dataset.theme === "light" ? "#f6f7fb" : "#0b0d12");
-    }
+  const syncTheme = () => {
+    const light = root.dataset.theme === "light";
+    if (themeMeta) themeMeta.setAttribute("content", light ? "#f6f6f3" : "#0a0b0e");
+    if (themeToggle) themeToggle.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
   };
-  syncThemeColor();
+  syncTheme();
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
-      localStorage.setItem(STORAGE_KEY, root.dataset.theme);
-      syncThemeColor();
+      localStorage.setItem("theme", root.dataset.theme);
+      syncTheme();
     });
   }
 
-  /* ---------- mobile navigation ---------- */
+  /* ---------- mobile navigation drawer ---------- */
   const nav = $("#nav");
   const navOpen = $("#nav-open");
   const navClose = $("#nav-close");
+  const scrim = $("#nav-scrim");
+  const isOpen = () => nav && nav.classList.contains("is-open");
 
   const setNav = (open) => {
-    if (!nav) return;
+    if (!nav || open === isOpen()) return;
     nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("is-locked", open);
     if (navOpen) navOpen.setAttribute("aria-expanded", String(open));
+    if (open) {
+      if (navClose) navClose.focus();
+    } else if (navOpen) {
+      navOpen.focus();
+    }
   };
 
   if (navOpen) navOpen.addEventListener("click", () => setNav(true));
   if (navClose) navClose.addEventListener("click", () => setNav(false));
-
-  $$(".nav__link").forEach((link) => link.addEventListener("click", () => setNav(false)));
+  if (scrim) scrim.addEventListener("click", () => setNav(false));
+  $$("#nav a").forEach((link) => link.addEventListener("click", () => setNav(false)));
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setNav(false);
+    if (!isOpen()) return;
+    if (event.key === "Escape") {
+      setNav(false);
+      return;
+    }
+    // keep Tab focus inside the open drawer
+    if (event.key === "Tab") {
+      const focusables = $$("#nav a, #nav button");
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
 
-  document.addEventListener("click", (event) => {
-    if (!nav || !nav.classList.contains("is-open")) return;
-    if (nav.contains(event.target) || (navOpen && navOpen.contains(event.target))) return;
-    setNav(false);
+  // drawer is desktop-hidden; don't leave the page locked if the viewport grows
+  window.matchMedia("(min-width: 881px)").addEventListener("change", (e) => {
+    if (e.matches && isOpen()) {
+      nav.classList.remove("is-open");
+      document.body.classList.remove("is-locked");
+      if (navOpen) navOpen.setAttribute("aria-expanded", "false");
+    }
   });
 
-  /* ---------- header + scroll-to-top state ---------- */
+  /* ---------- scroll-driven state (one rAF-throttled handler) ---------- */
   const header = $("#header");
   const scrollUp = $("#scroll-up");
+  const portrait = $("#portrait");
+  const timeline = $("#timeline");
+  const tlItems = $$(".tl");
+  let ticking = false;
 
-  const onScroll = () => {
+  const update = () => {
+    ticking = false;
     const y = window.scrollY;
-    if (header) header.classList.toggle("is-scrolled", y > 24);
-    if (scrollUp) scrollUp.classList.toggle("is-visible", y > 420);
+    const vh = window.innerHeight;
+
+    if (header) header.classList.toggle("is-scrolled", y > 16);
+    if (scrollUp) scrollUp.classList.toggle("is-visible", y > 480);
+
+    // hero: portrait drifts slightly slower than the page
+    if (portrait && !reduceMotion.matches && y < vh * 1.2) {
+      portrait.style.setProperty("--parallax", (y * -0.06).toFixed(1) + "px");
+    }
+
+    // experience: rail fills as it passes 60% of the viewport, nodes light up behind it
+    if (timeline) {
+      const line = vh * 0.6;
+      const rect = timeline.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, (line - rect.top) / rect.height));
+      timeline.style.setProperty("--progress", progress.toFixed(3));
+      tlItems.forEach((item) => {
+        item.classList.toggle("is-active", item.getBoundingClientRect().top + 8 < line);
+      });
+    }
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  update();
 
   /* ---------- active nav link ---------- */
-  const sections = $$("main section[id]");
   const navLinks = new Map($$(".nav__link").map((link) => [link.getAttribute("href"), link]));
 
-  if ("IntersectionObserver" in window && sections.length) {
+  if (hasIO) {
     const spy = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => link.classList.remove("is-active"));
           const active = navLinks.get("#" + entry.target.id);
-          if (active) active.classList.add("is-active");
+          // sections without a nav link (hero, impact) clear the indicator
+          navLinks.forEach((link) => link.classList.toggle("is-active", link === active));
         });
       },
       { rootMargin: "-45% 0px -50% 0px" }
     );
 
-    sections.forEach((section) => spy.observe(section));
+    $$("main section[id]").forEach((section) => spy.observe(section));
   }
 
   /* ---------- reveal on scroll ---------- */
   const revealables = $$(".reveal");
 
-  if ("IntersectionObserver" in window && revealables.length) {
+  if (hasIO) {
     const revealer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach((entry, index) => {
-          if (!entry.isIntersecting) return;
-          entry.target.style.transitionDelay = Math.min(index * 70, 280) + "ms";
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach((entry, index) => {
+            // stagger elements that enter together
+            entry.target.style.transitionDelay = Math.min(index * 70, 280) + "ms";
+            entry.target.classList.add("is-visible");
+            entry.target.addEventListener(
+              "transitionend",
+              () => (entry.target.style.transitionDelay = ""),
+              { once: true }
+            );
+            observer.unobserve(entry.target);
+          });
       },
-      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
+      { rootMargin: "0px 0px -40px 0px" }
     );
 
     revealables.forEach((element) => revealer.observe(element));
@@ -118,7 +177,7 @@
   /* ---------- about photo: play drift + caption when it scrolls into view ---------- */
   const aboutMedia = $("#about-media");
 
-  if (aboutMedia && "IntersectionObserver" in window) {
+  if (aboutMedia && hasIO) {
     let playTimer;
 
     const player = new IntersectionObserver(
