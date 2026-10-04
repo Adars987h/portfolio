@@ -6,33 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adarsh Kumar Srivastava — Senior Software Engineer</title>
   <meta name="description"
-    content="Senior Software Engineer at Simplify Money. I build secure, scalable Java and Micronaut backends on AWS that power digital gold, lending, insurance, KYC, payments and tax filing." />
+    content="Senior Software Engineer at Simplify Money. I build secure, scalable Java and Micronaut backends on AWS for fintech — financial integrations, payments, statements and authentication." />
   <meta name="author" content="Adarsh Kumar Srivastava" />
   <link rel="canonical" href="https://adarshsri.vercel.app/" />
-  <meta name="theme-color" content="#0b0d12" />
+  <meta name="theme-color" content="#0a0b0e" />
 
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Adarsh Kumar Srivastava" />
   <meta property="og:url" content="https://adarshsri.vercel.app/" />
   <meta property="og:title" content="Adarsh Kumar Srivastava — Senior Software Engineer" />
   <meta property="og:description"
     content="Backend engineer in fintech. Java, Micronaut and AWS services powering digital gold, lending, insurance, KYC, payments and tax filing at Simplify Money." />
   <meta property="og:image" content="https://adarshsri.vercel.app/assets/img/hero.jpg" />
+  <meta property="og:image:width" content="900" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Portrait of Adarsh Kumar Srivastava" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adarsh Kumar Srivastava — Senior Software Engineer" />
+  <meta name="twitter:description"
+    content="Backend engineer in fintech. Java, Micronaut and AWS services in production at Simplify Money." />
+  <meta name="twitter:image" content="https://adarshsri.vercel.app/assets/img/hero.jpg" />
 
-  <link rel="icon" href="./assets/img/Image111.png" />
+  <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/hero.webp" type="image/webp" />
   <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- apply the saved / preferred theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Adarsh Kumar Srivastava",
+      "jobTitle": "Senior Software Engineer",
+      "worksFor": { "@type": "Organization", "name": "Simplify Money" },
+      "url": "https://adarshsri.vercel.app/",
+      "sameAs": [
+        "https://github.com/Adars987h",
+        "https://www.linkedin.com/in/adarshsrivastava987/",
+        "https://leetcode.com/u/adarshsri987/"
+      ]
+    }
+  </script>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============ icon sprite ============ -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
     <symbol id="i-github" viewBox="0 0 24 24">
       <path
         d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
@@ -104,10 +138,6 @@
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
     </symbol>
-    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
-    </symbol>
     <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="m12 2 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5" />
@@ -126,21 +156,50 @@
       stroke-linecap="round" stroke-linejoin="round">
       <path d="m20 6-11 11-5-5" />
     </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6M8 13h8M8 17h5" />
+    </symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 2v6m6-6v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4" />
+    </symbol>
+    <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2" />
+      <path d="M2 10h20M6 15h4" />
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 3v18h18" />
+      <path d="m7 14 4-4 3 3 5-6" />
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="11" width="16" height="10" rx="2" />
+      <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+    </symbol>
+    <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+    </symbol>
   </svg>
 
-  <!-- ============ background decor ============ -->
-  <div class="decor" aria-hidden="true">
-    <span class="decor__glow decor__glow--a"></span>
-    <span class="decor__glow decor__glow--b"></span>
-    <span class="decor__grid"></span>
+  <!-- ============ background ============ -->
+  <div class="backdrop" aria-hidden="true">
+    <span class="backdrop__glow backdrop__glow--a"></span>
+    <span class="backdrop__glow backdrop__glow--b"></span>
+    <span class="backdrop__grid"></span>
   </div>
 
   <!-- ============ header ============ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="logo" href="#top">
-        <span class="logo__mark">AS</span>
-        <span class="logo__name">Adarsh <b>Srivastava</b></span>
+      <a class="logo" href="#top" aria-label="Adarsh Srivastava — back to top">
+        <span class="logo__mark" aria-hidden="true">AS</span>
+        <span class="logo__name">Adarsh Srivastava</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
@@ -151,14 +210,18 @@
           <li><a class="nav__link" href="#about">About</a></li>
           <li><a class="nav__link" href="#experience">Experience</a></li>
           <li><a class="nav__link" href="#skills">Skills</a></li>
-          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#work">Work</a></li>
           <li><a class="nav__link" href="#education">Education</a></li>
           <li><a class="nav__link" href="#contact">Contact</a></li>
         </ul>
+        <a class="btn btn--outline nav__resume" href="assets/Resume.pdf" download>
+          Download resume <svg class="icon"><use href="#i-download" /></svg>
+        </a>
       </nav>
+      <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
 
       <div class="header__actions">
-        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
           <svg class="icon icon--sun"><use href="#i-sun" /></svg>
           <svg class="icon icon--moon"><use href="#i-moon" /></svg>
         </button>
@@ -178,12 +241,12 @@
     <section class="hero" id="top">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="eyebrow"><span class="pulse"></span>Senior Software Engineer · Simplify Money</p>
-          <h1 class="hero__title">I build <span class="grad">secure, scalable</span> backends for fintech.</h1>
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Senior Software Engineer · Backend · Fintech</p>
+          <h1 class="hero__title">I build <em>secure, scalable backends</em> for fintech.</h1>
           <p class="hero__lede">
-            Java and Micronaut microservices on AWS that power digital gold, lending, insurance,
-            KYC, payments and tax filing at <b>Simplify Money</b> — where I was promoted to
-            Senior Software Engineer within 14 months.
+            Java and Micronaut services on AWS, running in production at <b>Simplify Money</b> —
+            the payment flows, statement processing and partner integrations behind digital gold,
+            lending, insurance, KYC and tax filing.
           </p>
 
           <div class="hero__actions">
@@ -223,33 +286,43 @@
         </div>
 
         <div class="hero__aside">
-          <div class="portrait">
-            <div class="portrait__ring"></div>
-            <img class="portrait__img" src="assets/img/hero.jpg" alt="Adarsh Kumar Srivastava" width="900"
-              height="900" />
-            <span class="portrait__badge portrait__badge--1">Java</span>
-            <span class="portrait__badge portrait__badge--2">Micronaut</span>
-            <span class="portrait__badge portrait__badge--3">AWS</span>
-          </div>
+          <figure class="portrait" id="portrait">
+            <span class="portrait__light" aria-hidden="true"></span>
+            <div class="portrait__frame">
+              <picture>
+                <source srcset="assets/img/hero.webp" type="image/webp" />
+                <img class="portrait__img" src="assets/img/hero.jpg"
+                  alt="Adarsh Kumar Srivastava, smiling, in a white shirt" width="900" height="900"
+                  fetchpriority="high" />
+              </picture>
+            </div>
+            <figcaption class="portrait__meta">
+              <span>Simplify Money</span>
+              <span>Noida, IN</span>
+            </figcaption>
+            <span class="portrait__label portrait__label--1" aria-hidden="true">Java</span>
+            <span class="portrait__label portrait__label--2" aria-hidden="true">Micronaut</span>
+            <span class="portrait__label portrait__label--3" aria-hidden="true">AWS</span>
+          </figure>
         </div>
       </div>
 
       <ul class="stats container" aria-label="Highlights">
         <li class="stat reveal">
           <span class="stat__num">14 mos</span>
-          <span class="stat__label">To promotion — SDE to Senior SDE</span>
+          <span class="stat__label">From SDE to Senior Software Engineer</span>
         </li>
         <li class="stat reveal">
           <span class="stat__num">5+</span>
-          <span class="stat__label">Fintech partner integrations owned</span>
+          <span class="stat__label">Fintech partner integrations owned end to end</span>
         </li>
         <li class="stat reveal">
           <span class="stat__num">450+</span>
-          <span class="stat__label">DSA problems solved</span>
+          <span class="stat__label">Data structures &amp; algorithms problems solved</span>
         </li>
         <li class="stat reveal">
           <span class="stat__num">Top 13%</span>
-          <span class="stat__label">LeetCode global ranking</span>
+          <span class="stat__label">Global ranking on LeetCode</span>
         </li>
       </ul>
     </section>
@@ -257,22 +330,22 @@
     <!-- ============ about ============ -->
     <section class="section" id="about">
       <header class="section__head reveal">
-        <p class="eyebrow">01 — About</p>
-        <h2 class="section__title">Backend engineer, fintech domain</h2>
+        <p class="section__num">01 / About</p>
+        <h2 class="section__title">Backend engineer, fintech domain.</h2>
       </header>
 
-      <div class="about reveal">
-        <div class="about__body">
-          <p>
-            I'm a backend-focused engineer at <b>Simplify Money</b>, where I design and ship the
-            services behind a consumer finance app — secure REST APIs, third-party financial
-            integrations, payment flows, and the data models that keep them consistent.
+      <div class="about">
+        <div class="about__body reveal">
+          <p class="about__lead">
+            I design and ship the services behind a consumer finance app — secure REST APIs,
+            third-party financial integrations, payment flows, and the data models that keep them
+            consistent.
           </p>
           <p>
             Day to day that means <b>Java</b> (Micronaut, Spring Boot) on <b>AWS</b> — DynamoDB,
             Lambda, API Gateway and S3 — with OAuth2/JWT authentication and CI/CD pipelines behind
-            it. I joined as a Software Development Engineer in April 2025 and was promoted to
-            Senior Software Engineer 14 months later.
+            it. I joined <b>Simplify Money</b> as a Software Development Engineer in April 2025 and
+            was promoted to Senior Software Engineer 14 months later.
           </p>
           <p>
             Right now I'm building <b>mutual fund transaction support</b>, extending the platform
@@ -287,21 +360,26 @@
             </div>
             <div class="fact">
               <dt>Focus</dt>
-              <dd>Backend · Fintech · AWS</dd>
+              <dd>Backend · Fintech</dd>
+            </div>
+            <div class="fact">
+              <dt>Core stack</dt>
+              <dd>Java · Micronaut · AWS</dd>
             </div>
             <div class="fact">
               <dt>Location</dt>
               <dd>Uttar Pradesh, India</dd>
             </div>
-            <div class="fact">
-              <dt>Education</dt>
-              <dd>B.Tech CSE, 2025</dd>
-            </div>
           </dl>
         </div>
 
-        <figure class="about__media" id="about-media">
-          <img src="assets/img/about.jpg" alt="Adarsh Kumar Srivastava" width="880" height="1091" loading="lazy" />
+        <figure class="about__media reveal" id="about-media">
+          <picture>
+            <source srcset="assets/img/about-walk.webp" type="image/webp" />
+            <img src="assets/img/about-walk.jpg"
+              alt="Adarsh walking outside an office building in a pink shirt, carrying a backpack" width="941"
+              height="1176" loading="lazy" />
+          </picture>
           <figcaption class="about__caption">
             <span class="about__caption-inner">
               <strong>Adarsh Kumar Srivastava</strong>
@@ -312,43 +390,131 @@
       </div>
     </section>
 
+    <!-- ============ engineering impact ============ -->
+    <section class="section" id="impact" aria-labelledby="impact-title">
+      <header class="section__head reveal">
+        <p class="section__num">02 / Engineering impact</p>
+        <h2 class="section__title" id="impact-title">Systems I've helped build.</h2>
+        <p class="section__note">
+          The areas I own in production at Simplify Money — described by what they do, not how
+          they're wired internally.
+        </p>
+      </header>
+
+      <div class="impact">
+        <article class="card sys sys--wide reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-file" /></svg></span>
+            <span class="sys__id">SYS · 01</span>
+          </div>
+          <h3 class="sys__title">Financial data infrastructure</h3>
+          <p class="sys__desc">
+            A microservice that securely accesses, decrypts and analyses bank and credit-card
+            statements, turning them into personalised financial insights.
+          </p>
+          <ol class="flow" aria-label="Processing stages">
+            <li>Access</li>
+            <li>Decrypt</li>
+            <li>Analyse</li>
+            <li>Insights</li>
+          </ol>
+        </article>
+
+        <article class="card sys reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-plug" /></svg></span>
+            <span class="sys__id">SYS · 02</span>
+          </div>
+          <h3 class="sys__title">Fintech integrations</h3>
+          <p class="sys__desc">End-to-end partner integrations, owned from contract to production.</p>
+          <ul class="partners">
+            <li>SafeGold</li>
+            <li>BASIC Loans</li>
+            <li>SMC Insurance</li>
+            <li>TaxBuddy</li>
+            <li>Digitap AI</li>
+          </ul>
+        </article>
+
+        <article class="card sys reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-card" /></svg></span>
+            <span class="sys__id">SYS · 03</span>
+          </div>
+          <h3 class="sys__title">Payments</h3>
+          <p class="sys__desc">Built and maintain the payment processing flows behind the app's financial products.</p>
+        </article>
+
+        <article class="card sys reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-chart" /></svg></span>
+            <span class="sys__id">SYS · 04</span>
+          </div>
+          <h3 class="sys__title">Wealth management</h3>
+          <p class="sys__desc">Mutual fund purchase and redemption — the platform's move into wealth management.</p>
+          <span class="tag tag--progress">In progress</span>
+        </article>
+
+        <article class="card sys reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-lock" /></svg></span>
+            <span class="sys__id">SYS · 05</span>
+          </div>
+          <h3 class="sys__title">Authentication &amp; security</h3>
+          <p class="sys__desc">OAuth2 and JWT authentication backed by DynamoDB, built to fintech-grade security standards.</p>
+        </article>
+
+        <article class="card sys sys--strip reveal">
+          <div class="sys__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-cloud" /></svg></span>
+            <span class="sys__id">SYS · 06</span>
+          </div>
+          <div>
+            <h3 class="sys__title">Cloud &amp; delivery</h3>
+            <p class="sys__desc">Services on AWS, shipped through CI/CD across multiple production releases.</p>
+          </div>
+          <ul class="chips">
+            <li>Lambda</li>
+            <li>API Gateway</li>
+            <li>DynamoDB</li>
+            <li>S3</li>
+            <li>CI/CD</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- ============ experience ============ -->
     <section class="section" id="experience">
       <header class="section__head reveal">
-        <p class="eyebrow">02 — Experience</p>
-        <h2 class="section__title">What I've shipped in production</h2>
+        <p class="section__num">03 / Experience</p>
+        <h2 class="section__title">Fourteen months, one promotion.</h2>
       </header>
 
-      <div class="timeline">
-        <article class="tl reveal">
-          <div class="tl__rail" aria-hidden="true"><span class="tl__dot"></span></div>
+      <div class="org reveal">
+        <div>
+          <h3 class="org__name">Simplify Money</h3>
+          <p class="org__meta">Noida, Uttar Pradesh · April 2025 — Present</p>
+        </div>
+        <span class="tag tag--live">Current</span>
+      </div>
 
-          <div class="card tl__card">
-            <div class="tl__head">
-              <div>
-                <h3 class="tl__org">Simplify Money</h3>
-                <p class="tl__meta">Noida, Uttar Pradesh · April 2025 — Present</p>
-              </div>
-              <span class="tag tag--live">Current</span>
-            </div>
+      <ol class="timeline" id="timeline">
+        <li class="tl">
+          <p class="tl__date">Apr 2025</p>
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__body reveal">
+            <h4 class="tl__role">Software Development Engineer</h4>
+            <p class="tl__text">Joined Simplify Money, working on the backend of its consumer finance app.</p>
+          </div>
+        </li>
 
-            <ol class="roles">
-              <li class="role">
-                <span class="role__title">Senior Software Engineer</span>
-                <span class="role__date">Jun 2026 — Present</span>
-              </li>
-              <li class="role">
-                <span class="role__title">Software Development Engineer</span>
-                <span class="role__date">Apr 2025 — Jun 2026</span>
-              </li>
-            </ol>
-
+        <li class="tl">
+          <p class="tl__date">Apr 2025 —<br />Present</p>
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="card tl__card reveal">
+            <h4 class="tl__role">Production backend ownership</h4>
             <ul class="bullets">
-              <li>
-                <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-                <span><b>Promoted to Senior Software Engineer within 14 months</b> of joining, in
-                  recognition of technical ownership and delivery impact.</span>
-              </li>
               <li>
                 <svg class="icon bullets__icon"><use href="#i-check" /></svg>
                 <span>Led backend development and <b>multiple production deployments</b>, keeping
@@ -357,32 +523,26 @@
               <li>
                 <svg class="icon bullets__icon"><use href="#i-check" /></svg>
                 <span>Designed and shipped a <b>scalable microservice</b> that securely accesses,
-                  decrypts and analyses bank and credit card statements to generate personalised
-                  financial insights.</span>
+                  decrypts and analyses bank and credit-card statements.</span>
               </li>
               <li>
                 <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-                <span>Owned <b>end-to-end integrations</b> with SafeGold, BASIC Loans, SMC
-                  Insurance, TaxBuddy and Digitap AI — unlocking digital gold, lending, insurance,
-                  KYC and tax filing.</span>
+                <span>Owned <b>end-to-end integrations</b> with SafeGold, BASIC Loans, SMC Insurance,
+                  TaxBuddy and Digitap AI.</span>
               </li>
               <li>
                 <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-                <span>Built and maintained <b>payment processing flows</b>; currently driving
-                  <b>mutual fund transaction support</b> (purchase and redemption) for the
-                  platform's wealth management expansion.</span>
+                <span>Built and maintained <b>payment processing flows</b>.</span>
               </li>
               <li>
                 <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-                <span>Architected secure <b>OAuth2 and JWT authentication</b> backed by DynamoDB,
-                  meeting fintech-grade security standards.</span>
+                <span>Architected <b>OAuth2 and JWT authentication</b> backed by DynamoDB.</span>
               </li>
             </ul>
-
-            <ul class="chips" aria-label="Technologies used">
+            <ul class="chips chips--stagger" aria-label="Technologies used">
               <li>Java</li>
               <li>Micronaut</li>
-              <li>AWS DynamoDB</li>
+              <li>DynamoDB</li>
               <li>Lambda</li>
               <li>API Gateway</li>
               <li>S3</li>
@@ -391,38 +551,39 @@
               <li>CI/CD</li>
             </ul>
           </div>
-        </article>
-      </div>
+        </li>
+
+        <li class="tl tl--current">
+          <p class="tl__date">Jun 2026</p>
+          <span class="tl__node" aria-hidden="true"></span>
+          <div class="tl__body reveal">
+            <h4 class="tl__role">Senior Software Engineer</h4>
+            <p class="tl__text">
+              Promoted <b>within 14 months</b> of joining, for technical ownership and delivery
+              impact. Currently driving <b>mutual fund transaction support</b> — purchase and
+              redemption — for the platform's wealth-management expansion.
+            </p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <!-- ============ skills ============ -->
     <section class="section" id="skills">
       <header class="section__head reveal">
-        <p class="eyebrow">03 — Skills</p>
-        <h2 class="section__title">The stack I work in</h2>
+        <p class="section__num">04 / Skills</p>
+        <h2 class="section__title">The stack I work in.</h2>
       </header>
 
       <div class="skills">
-        <article class="card skill reveal">
+        <article class="card skill skill--primary reveal">
           <div class="skill__head">
-            <span class="skill__icon"><svg class="icon"><use href="#i-code" /></svg></span>
-            <h3>Languages</h3>
+            <span class="sys__icon"><svg class="icon"><use href="#i-server" /></svg></span>
+            <h3>Core backend</h3>
+            <span class="skill__note">Primary</span>
           </div>
-          <ul class="chips">
+          <ul class="chips chips--lg">
             <li>Java</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>C</li>
-            <li>SQL</li>
-          </ul>
-        </article>
-
-        <article class="card skill reveal">
-          <div class="skill__head">
-            <span class="skill__icon"><svg class="icon"><use href="#i-server" /></svg></span>
-            <h3>Backend</h3>
-          </div>
-          <ul class="chips">
             <li>Micronaut</li>
             <li>Spring Boot</li>
             <li>REST APIs</li>
@@ -435,36 +596,37 @@
 
         <article class="card skill reveal">
           <div class="skill__head">
-            <span class="skill__icon"><svg class="icon"><use href="#i-cloud" /></svg></span>
-            <h3>Cloud &amp; Infra</h3>
+            <span class="sys__icon"><svg class="icon"><use href="#i-cloud" /></svg></span>
+            <h3>Cloud &amp; infrastructure</h3>
           </div>
           <ul class="chips">
-            <li>AWS DynamoDB</li>
-            <li>AWS Lambda</li>
+            <li>AWS</li>
+            <li>DynamoDB</li>
+            <li>Lambda</li>
             <li>API Gateway</li>
             <li>S3</li>
             <li>CI/CD</li>
-            <li>Git &amp; GitHub</li>
+            <li>Git</li>
+            <li>GitHub</li>
           </ul>
         </article>
 
         <article class="card skill reveal">
           <div class="skill__head">
-            <span class="skill__icon"><svg class="icon"><use href="#i-layers" /></svg></span>
-            <h3>Frontend</h3>
+            <span class="sys__icon"><svg class="icon"><use href="#i-db" /></svg></span>
+            <h3>Databases</h3>
           </div>
           <ul class="chips">
-            <li>React</li>
-            <li>Next.js</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Bootstrap</li>
+            <li>DynamoDB</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
           </ul>
         </article>
 
         <article class="card skill reveal">
           <div class="skill__head">
-            <span class="skill__icon"><svg class="icon"><use href="#i-cpu" /></svg></span>
+            <span class="sys__icon"><svg class="icon"><use href="#i-cpu" /></svg></span>
             <h3>Fundamentals</h3>
           </div>
           <ul class="chips">
@@ -475,149 +637,270 @@
             <li>Computer Networks</li>
           </ul>
         </article>
+
+        <article class="card skill skill--muted reveal">
+          <div class="skill__head">
+            <span class="sys__icon"><svg class="icon"><use href="#i-layers" /></svg></span>
+            <h3>Frontend</h3>
+          </div>
+          <ul class="chips">
+            <li>React</li>
+            <li>Next.js</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </article>
       </div>
+      <p class="skills__also reveal">Also: Python · C · Bootstrap</p>
     </section>
 
-    <!-- ============ projects ============ -->
-    <section class="section" id="projects">
+    <!-- ============ work ============ -->
+    <section class="section" id="work">
       <header class="section__head reveal">
-        <p class="eyebrow">04 — Projects</p>
-        <h2 class="section__title">Selected work</h2>
-        <p class="section__note">
-          Most of what I build now ships inside Simplify Money's production systems and isn't open
-          source — see <a href="#experience">Experience</a> for that. Here's the personal project I
-          still point people to.
-        </p>
+        <p class="section__num">05 / Work</p>
+        <h2 class="section__title">Selected work.</h2>
       </header>
 
-      <article class="card project reveal">
-        <div class="project__media">
-          <img src="assets/img/Project1.png" alt="CafeEase application screenshot" loading="lazy" />
-        </div>
-
-        <div class="project__body">
-          <div class="project__head">
-            <h3 class="project__title">CafeEase</h3>
-            <span class="tag">Full-stack</span>
-          </div>
-          <p class="project__desc">
-            A full-stack cafe management platform that simulates real-world cafe operations —
-            admin product and category management, role-based access, ordering, and automated
-            billing.
+      <div class="work__group">
+        <div class="work__label reveal">
+          <h3>Production systems</h3>
+          <p>
+            Built at Simplify Money and proprietary — shown at the level of problem, ownership and
+            outcome. No internals.
           </p>
-          <ul class="bullets bullets--tight">
-            <li>
-              <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-              <span>Spring Boot backend with a React front end, built around <b>RESTful APIs</b>.</span>
-            </li>
-            <li>
-              <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-              <span><b>JWT authentication and authorisation</b> separating Admin and User roles.</span>
-            </li>
-            <li>
-              <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-              <span>Management of <b>80+ products</b> across categories, with an integrated shopping
-                cart for order placement.</span>
-            </li>
-            <li>
-              <svg class="icon bullets__icon"><use href="#i-check" /></svg>
-              <span>Automated <b>PDF bill generation</b> and transactional email notifications.</span>
-            </li>
-          </ul>
-
-          <ul class="chips" aria-label="Technologies used">
-            <li>Java</li>
-            <li>Spring Boot</li>
-            <li>MySQL</li>
-            <li>React</li>
-            <li>JWT</li>
-          </ul>
-
-          <div class="project__links">
-            <a class="btn btn--primary btn--sm" href="https://cafeease.vercel.app/" target="_blank" rel="noopener">
-              Live demo <svg class="icon"><use href="#i-external" /></svg>
-            </a>
-            <a class="btn btn--outline btn--sm" href="https://github.com/Adars987h/cafeEase" target="_blank"
-              rel="noopener">
-              Backend <svg class="icon"><use href="#i-github" /></svg>
-            </a>
-            <a class="btn btn--outline btn--sm" href="https://github.com/Adars987h/cafeEase_UI" target="_blank"
-              rel="noopener">
-              Frontend <svg class="icon"><use href="#i-github" /></svg>
-            </a>
-          </div>
         </div>
-      </article>
 
-      <p class="projects__more reveal">
-        More experiments and older projects live on
-        <a href="https://github.com/Adars987h" target="_blank" rel="noopener">GitHub</a>.
-      </p>
+        <div class="cases">
+          <article class="card case reveal">
+            <div class="case__top">
+              <span class="case__src">Production · Simplify Money</span>
+              <span class="tag">NDA</span>
+            </div>
+            <h4 class="case__title">Financial statement intelligence</h4>
+            <dl class="case__dl">
+              <div>
+                <dt>Problem</dt>
+                <dd>Bank and credit-card statements hold the data needed for useful advice, but
+                  they're sensitive and encrypted.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Designed and shipped the microservice that securely accesses, decrypts and
+                  analyses them.</dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Personalised financial insights generated from users' own statements.</dd>
+              </div>
+            </dl>
+            <ul class="chips"><li>Java</li><li>Micronaut</li><li>AWS</li></ul>
+          </article>
+
+          <article class="card case reveal">
+            <div class="case__top">
+              <span class="case__src">Production · Simplify Money</span>
+              <span class="tag">NDA</span>
+            </div>
+            <h4 class="case__title">Fintech partner integrations</h4>
+            <dl class="case__dl">
+              <div>
+                <dt>Problem</dt>
+                <dd>Gold, lending, insurance, KYC and tax filing each depend on a different
+                  specialist partner.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Owned end-to-end integrations with SafeGold, BASIC Loans, SMC Insurance,
+                  TaxBuddy and Digitap AI.</dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Digital gold, lending, insurance, KYC and tax filing available in one app.</dd>
+              </div>
+            </dl>
+            <ul class="chips"><li>Java</li><li>Micronaut</li><li>REST APIs</li></ul>
+          </article>
+
+          <article class="card case reveal">
+            <div class="case__top">
+              <span class="case__src">Production · Simplify Money</span>
+              <span class="tag">NDA</span>
+            </div>
+            <h4 class="case__title">Authentication</h4>
+            <dl class="case__dl">
+              <div>
+                <dt>Problem</dt>
+                <dd>A finance app needs authentication that holds up to fintech security
+                  expectations.</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>Architected and implemented OAuth2 and JWT-based authentication backed by
+                  DynamoDB.</dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>Authentication that meets fintech-grade security standards.</dd>
+              </div>
+            </dl>
+            <ul class="chips"><li>OAuth2</li><li>JWT</li><li>DynamoDB</li></ul>
+          </article>
+
+          <article class="card case reveal">
+            <div class="case__top">
+              <span class="case__src">Production · Simplify Money</span>
+              <span class="tag tag--progress">In progress</span>
+            </div>
+            <h4 class="case__title">Mutual fund transactions</h4>
+            <dl class="case__dl">
+              <div>
+                <dt>Problem</dt>
+                <dd>Moving into wealth management requires mutual fund purchase and redemption.</dd>
+              </div>
+              <div>
+                <dt>Building</dt>
+                <dd>Driving development of mutual fund transaction support end to end.</dd>
+              </div>
+              <div>
+                <dt>Outcome</dt>
+                <dd>The foundation for the platform's wealth-management expansion.</dd>
+              </div>
+            </dl>
+            <ul class="chips"><li>Java</li><li>Micronaut</li><li>AWS</li></ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="work__group">
+        <div class="work__label reveal">
+          <h3>Personal project</h3>
+          <p>Built outside work, end to end. Source is public.</p>
+        </div>
+
+        <article class="card project reveal">
+          <div class="project__media">
+            <picture>
+              <source srcset="assets/img/Project1.webp" type="image/webp" />
+              <img src="assets/img/Project1.png"
+                alt="CafeEase screens: landing page, login, product categories, product listing and cart"
+                width="1535" height="796" loading="lazy" />
+            </picture>
+          </div>
+
+          <div class="project__body">
+            <div class="project__head">
+              <div>
+                <h4 class="project__title">CafeEase</h4>
+                <p class="project__sub">Full-stack cafe management platform</p>
+              </div>
+              <span class="tag">Open source</span>
+            </div>
+            <p class="project__desc">
+              Simulates real-world cafe operations: admins manage products and categories,
+              customers order through a cart, and bills are generated and emailed automatically.
+              Spring Boot REST backend, React front end.
+            </p>
+
+            <ol class="features">
+              <li><span>01</span><b>Authentication</b> JWT auth with separate Admin and User roles</li>
+              <li><span>02</span><b>Product management</b> 80+ products across categories</li>
+              <li><span>03</span><b>Ordering</b> Integrated shopping cart for order placement</li>
+              <li><span>04</span><b>Billing</b> Automated PDF bills and email notifications</li>
+            </ol>
+
+            <ul class="chips" aria-label="Technologies used">
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>React</li>
+              <li>MySQL</li>
+              <li>JWT</li>
+            </ul>
+
+            <div class="project__links">
+              <a class="btn btn--primary btn--sm" href="https://cafeease.vercel.app/" target="_blank" rel="noopener">
+                Live demo <svg class="icon"><use href="#i-external" /></svg>
+              </a>
+              <a class="btn btn--outline btn--sm" href="https://github.com/Adars987h/cafeEase" target="_blank"
+                rel="noopener">
+                Backend <svg class="icon"><use href="#i-github" /></svg>
+              </a>
+              <a class="btn btn--outline btn--sm" href="https://github.com/Adars987h/cafeEase_UI" target="_blank"
+                rel="noopener">
+                Frontend <svg class="icon"><use href="#i-github" /></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <p class="work__more reveal">
+          Older experiments live on
+          <a href="https://github.com/Adars987h" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </div>
     </section>
 
     <!-- ============ education ============ -->
-    <section class="section" id="education">
+    <section class="section section--tight" id="education">
       <header class="section__head reveal">
-        <p class="eyebrow">05 — Education</p>
-        <h2 class="section__title">Where I trained</h2>
+        <p class="section__num">06 / Education</p>
+        <h2 class="section__title">Education.</h2>
       </header>
 
-      <div class="edu">
-        <article class="card edu__item reveal">
-          <span class="skill__icon"><svg class="icon"><use href="#i-cap" /></svg></span>
-          <div>
-            <h3 class="edu__title">B.Tech, Computer Science &amp; Engineering</h3>
-            <p class="edu__org">Babu Banarasi Das Institute of Technology and Management, Lucknow</p>
-            <p class="edu__date">September 2021 — June 2025</p>
-            <p class="edu__note">
-              Coursework across data structures and algorithms, operating systems, DBMS, computer
-              networks, software engineering and compiler design.
-            </p>
-          </div>
-        </article>
-
-        <article class="card edu__item reveal">
-          <span class="skill__icon"><svg class="icon"><use href="#i-cap" /></svg></span>
-          <div>
-            <h3 class="edu__title">Class XII — ISC</h3>
-            <p class="edu__org">St. Thomas Mission School, Lucknow</p>
-            <p class="edu__date">April 2020 — March 2021</p>
-            <p class="edu__note">
-              Physics, Chemistry, Mathematics, English and Computer Science — 87% aggregate.
-            </p>
-          </div>
-        </article>
-      </div>
+      <article class="card edu reveal">
+        <span class="sys__icon"><svg class="icon"><use href="#i-cap" /></svg></span>
+        <div class="edu__main">
+          <h3 class="edu__title">B.Tech, Computer Science &amp; Engineering</h3>
+          <p class="edu__org">Babu Banarasi Das Institute of Technology and Management, Lucknow</p>
+          <p class="edu__note">
+            Coursework: data structures and algorithms, operating systems, DBMS, computer networks,
+            software engineering.
+          </p>
+        </div>
+        <p class="edu__date">2021 — 2025</p>
+      </article>
+      <p class="edu__secondary reveal">
+        Class XII (ISC) · St. Thomas Mission School, Lucknow · 2021 · 87%
+      </p>
     </section>
 
     <!-- ============ contact ============ -->
     <section class="section" id="contact">
-      <header class="section__head reveal">
-        <p class="eyebrow">06 — Contact</p>
-        <h2 class="section__title">Let's build something</h2>
-        <p class="section__note">
-          Open to conversations about backend engineering, fintech platforms and distributed systems.
+      <div class="cta reveal">
+        <p class="section__num">07 / Contact</p>
+        <h2 class="cta__title">Let's build something useful.</h2>
+        <p class="cta__text">
+          Open to conversations about backend engineering, fintech platforms, distributed systems
+          and interesting technical problems.
         </p>
-      </header>
-
-      <div class="contact reveal">
-        <a class="card contact__item" href="mailto:adarshsri987@gmail.com">
-          <span class="skill__icon"><svg class="icon"><use href="#i-mail" /></svg></span>
-          <span class="contact__label">Email</span>
-          <span class="contact__value">adarshsri987@gmail.com</span>
-        </a>
-
-        <a class="card contact__item" href="tel:+919532033785">
-          <span class="skill__icon"><svg class="icon"><use href="#i-phone" /></svg></span>
-          <span class="contact__label">Phone</span>
-          <span class="contact__value">+91 95320 33785</span>
-        </a>
-
-        <div class="card contact__item">
-          <span class="skill__icon"><svg class="icon"><use href="#i-pin" /></svg></span>
-          <span class="contact__label">Location</span>
-          <span class="contact__value">Uttar Pradesh, India</span>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:adarshsri987@gmail.com">
+            Email me <svg class="icon"><use href="#i-mail" /></svg>
+          </a>
+          <a class="btn btn--outline" href="https://www.linkedin.com/in/adarshsrivastava987/" target="_blank"
+            rel="noopener">
+            LinkedIn <svg class="icon"><use href="#i-linkedin" /></svg>
+          </a>
+          <a class="btn btn--outline" href="https://github.com/Adars987h" target="_blank" rel="noopener">
+            View GitHub <svg class="icon"><use href="#i-github" /></svg>
+          </a>
         </div>
+
+        <ul class="cta__meta">
+          <li>
+            <svg class="icon"><use href="#i-mail" /></svg>
+            <a href="mailto:adarshsri987@gmail.com">adarshsri987@gmail.com</a>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-phone" /></svg>
+            <a href="tel:+919532033785">+91 95320 33785</a>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-pin" /></svg>
+            <span>Uttar Pradesh, India</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -625,10 +908,10 @@
   <!-- ============ footer ============ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <a class="logo" href="#top">
-          <span class="logo__mark">AS</span>
-          <span class="logo__name">Adarsh <b>Srivastava</b></span>
+      <div>
+        <a class="logo" href="#top" aria-label="Adarsh Srivastava — back to top">
+          <span class="logo__mark" aria-hidden="true">AS</span>
+          <span class="logo__name">Adarsh Srivastava</span>
         </a>
         <p class="footer__tag">Senior Software Engineer · Backend &amp; fintech</p>
       </div>
@@ -637,11 +920,11 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <ul class="social social--footer" aria-label="Profiles">
+      <ul class="social" aria-label="Profiles">
         <li>
           <a class="social__link" href="https://github.com/Adars987h" target="_blank" rel="noopener"
             aria-label="GitHub">
